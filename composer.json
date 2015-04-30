@@ -1,0 +1,23 @@
+{
+    "name": "sololab/vimap",
+    "description": "",
+    "authors": [
+        {
+            "name": "duongtd",
+            "email": "duongtd@sololab.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-4": {
+            "Sololab\\Vimap\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
