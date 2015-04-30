@@ -12,7 +12,30 @@ class CreateVimapTables extends Migration {
 	 */
 	public function up()
 	{
-		//
+		Schema::create('vimap_provinces', function (Blueprint $table)
+		{
+			$table->increments('id');
+			$table->text('name');
+			$table->text('type');
+		});
+
+		Schema::create('vimap_districts', function (Blueprint $table)
+		{
+			$table->increments('id');
+			$table->unsignedInteger('province_id');
+			$table->text('name');
+			$table->text('type');
+			$table->text('location');
+		});
+
+		Schema::create('vimap_wards', function (Blueprint $table)
+		{
+			$table->increments('id');
+			$table->unsignedInteger('district_id');
+			$table->text('name');
+			$table->text('type');
+			$table->text('location');
+		});
 	}
 
 	/**
@@ -22,7 +45,9 @@ class CreateVimapTables extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::dropIfExists('vimap_provinces');
+		Schema::dropIfExists('vimap_districts');
+		Schema::dropIfExists('vimap_wards');
 	}
 
 }

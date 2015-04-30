@@ -9,11 +9,15 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "4.2.*"
+        "illuminate/support": "4.2.*",
+        "dingo/api": "0.8.2"
     },
     "autoload": {
         "classmap": [
-            "src/migrations"
+            "src/migrations",
+            "src/transformers",
+            "src/models",
+            "src/controllers"
         ],
         "psr-4": {
             "Sololab\\Vimap\\": "src/"

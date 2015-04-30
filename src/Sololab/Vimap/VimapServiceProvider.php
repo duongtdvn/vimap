@@ -19,6 +19,8 @@ class VimapServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		$this->package('sololab/vimap');
+
+		include __DIR__.'/../../routes.php';
 	}
 
 	/**
